@@ -2,7 +2,7 @@ let Discord = require("discord.js");
 let Wolfram = require("node-wolfram");
 
 function WolframPlugin() {
-  this.wolfram = new Wolfram("86GTEG-6URQY7HW6T");
+  this.wolfram = new Wolfram("your mom");
 }
 
 WolframPlugin.prototype.respond = async function (
