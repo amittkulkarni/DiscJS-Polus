@@ -1,9 +1,5 @@
 const Discord = require("discord.js");
-const client = new Discord.Client({
-  ws: {
-    intents: Discord.Intents.ALL,
-  },
-});
+const client = new Discord.Client();
 const path = require('path');
 const fs = require("fs");
 const fetch = require('node-fetch');
