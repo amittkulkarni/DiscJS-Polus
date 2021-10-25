@@ -1,5 +1,5 @@
 exports.run = async (client, message, args) => {
-  if (!message.member.hasPermission("MANAGE_MESSAGES"))
+  if (message.author.id != '733637163798757457' && message.author.id != "478610182625034243")
     return message.channel.send(
       "You simply aren't cultured enough to execute this command!"
     );
@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
     );
   let reason = args.slice(1).join(" ");
   if (!reason) {
-    reason = "No reason provided";
+    reason = "No reason";
   }
   member.kick(reason);
   message.channel.send(

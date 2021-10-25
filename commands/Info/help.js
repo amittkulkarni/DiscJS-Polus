@@ -14,6 +14,7 @@ exports.run = async (client, message, args) => {
           'shows a nsfw image of the category you choose, Type ``nsfw` to get list of all categories.',
       )
       .addField('`wolfram', 'solves any problem and gives information and statistics of literally anything you could imagine')
+      .addField('`torrent', 'provides a magnet link of the torrent you search')
       .setFooter(`Made by ItsMeAmit#1051`);
   message.channel.send(embed);
 };

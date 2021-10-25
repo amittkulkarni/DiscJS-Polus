@@ -3,7 +3,7 @@ const discord = require("discord.js");
 const link = "https://www.reddit.com/r/HolUp.json?sort=hot";
 
 exports.run = async (client, message, args) => {
-  let fetchMemes = await fetch(link).then((m) => m.json());
+  let fetchMemes = await fetch(link).then(  (m) => m.json());
   const getMemes = fetchMemes.data.children;
   let randomMeme = getMemes[Math.floor(Math.random() * getMemes.length)];
   let memeEmbed = new discord.MessageEmbed()

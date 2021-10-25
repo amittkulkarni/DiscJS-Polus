@@ -2,7 +2,7 @@ let Discord = require("discord.js");
 let Wolfram = require("node-wolfram");
 
 function WolframPlugin() {
-  this.wolfram = new Wolfram("your mom");
+  this.wolfram = new Wolfram("86GTEG-6URQY7HW6T");
 }
 
 WolframPlugin.prototype.respond = async function (
@@ -73,7 +73,7 @@ WolframPlugin.prototype.respond = async function (
 				{
 					response += '\t'+subpod.plaintext[c];
 				}*/
-        for (let d = 0; d < subpod.img.length; d++) {
+        for (let d = 0; d < 5; d++) {
           let embed = new Discord.MessageEmbed();
           embed.title = title;
           if (subpod.$.title.length > 0) {
@@ -88,34 +88,6 @@ WolframPlugin.prototype.respond = async function (
           };
           await channel.send("", embed);
         }
-      }
-      if (pod.hasOwnProperty("infos")) {
-        let message = title;
-        message += "\nAdditional Info:";
-        for (infos of pod.infos) {
-          for (info of infos.info) {
-            if (info.hasOwnProperty("$") && info.$.hasOwnProperty("text")) {
-              message += "\n" + info.$.text;
-            }
-            if (info.hasOwnProperty("link")) {
-              for (link of info.link) {
-                message +=
-                  "\n" + `${link.$.title} ${link.$.text}: ${link.$.url}`;
-              }
-            }
-            embeds = [];
-            if (info.hasOwnProperty("img")) {
-              for (img of info.img) {
-                let embed = new Discord.MessageEmbed();
-                embed.description = img.$.title;
-                embed.image = { url: img.$.src };
-                embed.color = 0xffc230;
-                embeds.push(embed);
-              }
-            }
-          }
-        }
-        await channel.send(message, embeds);
       }
     }
   } else {

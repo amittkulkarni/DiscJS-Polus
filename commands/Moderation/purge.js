@@ -19,7 +19,6 @@ exports.run = async (client, message) => {
   const fetched = await message.channel.messages.fetch({
     limit: amountToDelete,
   });
-
   try {
     await message.channel
       .bulkDelete(fetched)
